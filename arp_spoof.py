@@ -52,7 +52,7 @@ def restore(destination_ip, source_ip):
 
     source_mac = get_mac(source_ip)
 
-    packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc= source_mac) # Scappy automatticlly sending own mac address if wont specify hwsrc
+    packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc= source_mac) # Scapy automatically sending own mac address if wont specify hwsrc
 
     scapy.send(packet, count=4, verbose=False)
 
